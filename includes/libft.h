@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 17:43:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/12 09:08:27 by tinkotsu         ###   ########.fr       */
+/*   Updated: 2019/11/07 19:24:18 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ const char			*ft_clearing(const char *str);
 void				ft_swap(int *a, int *b);
 int					ft_isupper(int c);
 int					ft_islower(int c);
-void				ft_freep(char ***str, int i);
+void				ft_freep(char **str, int i);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -91,7 +91,8 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				**ft_sort_params(int argc, char **argv);
 int					ft_sqrt(int nb);
-t_list				*ft_lstpushback(t_list *lst, t_list *new_list);
+void				ft_lstpushback(t_list **lst, t_list *new_list);
 void				ft_lstfree(t_list **lst);
+char				**ft_strsplit_full(char const *str);
 
 #endif

@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_freep.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 17:17:40 by ifran             #+#    #+#             */
-/*   Updated: 2019/09/12 22:49:04 by ifran            ###   ########.fr       */
+/*   Updated: 2019/11/07 19:22:34 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_freep(char ***str, int i)
+void		ft_freep(char **str, int i)
 {
 	while (i >= 0)
 	{
-		free((*str)[i]);
-		(*str)[i] = NULL;
+		free(str[i]);
+		str[i] = NULL;
 		--i;
 	}
-	free(*str);
-	*str = NULL;
+	free(str);
+	str = NULL;
 }

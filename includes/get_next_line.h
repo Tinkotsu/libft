@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ifran <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 21:48:43 by ifran             #+#    #+#             */
-/*   Updated: 2019/10/24 16:34:43 by ifran            ###   ########.fr       */
+/*   Created: 2019/10/14 14:52:26 by ifran             #+#    #+#             */
+/*   Updated: 2019/10/14 14:53:00 by ifran            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
 
-void	ft_lstpushback(t_list **lst, t_list *new_list)
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 32
+
+# include "libft.h"
+
+typedef struct		s_file
 {
-	t_list *start;
+	int				fd;
+	char			*str;
+}					t_file;
 
-	if (*lst)
-	{
-		start = *lst;
-		while (start->next)
-			start = start->next;
-		start->next = new_list;
-	}
-	else
-		*lst = new_list;
-}
+int					get_next_line(const int fd, char **line);
+
+#endif
