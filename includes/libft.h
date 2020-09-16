@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <ifran@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tinkotsu <tinkotsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 17:43:52 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/07 19:24:18 by ifran            ###   ########.fr       */
+/*   Updated: 2020/03/04 18:52:24 by jkrypto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
+int					ft_isnumber(char *str);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
@@ -55,7 +57,7 @@ char				*ft_strtrim(char const *s);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				**ft_strsplit(char const *str, char c);
 char				*ft_strnstr(const char *haystack,\
-		const char *needle, size_t len);
+					const char *needle, size_t len);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -95,5 +97,9 @@ int					ft_sqrt(int nb);
 void				ft_lstpushback(t_list **lst, t_list *new_list);
 void				ft_lstfree(t_list **lst);
 char				**ft_strsplit_full(char const *str);
+void				*ft_realloc(void *src, size_t size, long dif);
+unsigned long long	ft_ull_pow(unsigned long long number,
+					unsigned long long power);
+void				gnl_free_fd(t_file **file, int fd);
 
 #endif

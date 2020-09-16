@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_ull_pow.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jkrypto <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 18:42:07 by ifran             #+#    #+#             */
-/*   Updated: 2019/11/28 15:50:33 by jkrypto          ###   ########.fr       */
+/*   Created: 2020/03/04 18:54:19 by jkrypto           #+#    #+#             */
+/*   Updated: 2020/03/04 18:54:29 by jkrypto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-int		ft_isdigit(int c)
+unsigned long long	ft_ull_pow(unsigned long long number,
+		unsigned long long power)
 {
-	if ((c >= '0') && (c <= '9'))
-		return (1);
-	return (0);
+	unsigned long long res;
+
+	res = number;
+	while (power > 1)
+	{
+		res *= number;
+		--power;
+	}
+	return (res);
 }

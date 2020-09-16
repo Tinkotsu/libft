@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jkrypto <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 03:18:56 by ifran             #+#    #+#             */
-/*   Updated: 2019/09/11 18:29:38 by ifran            ###   ########.fr       */
+/*   Created: 2019/09/18 21:54:28 by jkrypto           #+#    #+#             */
+/*   Updated: 2019/09/18 22:04:11 by jkrypto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_isspace(int c)
 {
-	void	*orig;
-	char	*cdst;
-	char	*csrc;
-
-	cdst = (char *)dst;
-	csrc = (char *)src;
-	if (!cdst && !csrc)
-		return (NULL);
-	orig = dst;
-	while (n--)
-		*cdst++ = *csrc++;
-	return (orig);
+	return (c == ' ' || c == '\n' || c == '\t' ||
+			c == '\f' || c == '\v' || c == '\r');
 }

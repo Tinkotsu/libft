@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ifran <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jkrypto <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 03:18:56 by ifran             #+#    #+#             */
-/*   Updated: 2019/09/11 18:29:38 by ifran            ###   ########.fr       */
+/*   Created: 2019/11/28 15:47:26 by jkrypto           #+#    #+#             */
+/*   Updated: 2019/11/28 15:55:23 by jkrypto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_isnumber(char *str)
 {
-	void	*orig;
-	char	*cdst;
-	char	*csrc;
-
-	cdst = (char *)dst;
-	csrc = (char *)src;
-	if (!cdst && !csrc)
-		return (NULL);
-	orig = dst;
-	while (n--)
-		*cdst++ = *csrc++;
-	return (orig);
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
 }
